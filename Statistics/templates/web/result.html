@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block title %} Result {% endblock %} 
+{% block content %}
+<div class="maindiv m-3">
+  <h2 class="mb-4">Result of your data</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Arithmetic Function</th>
+        <th scope="col">Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Sum</strong></td>
+        <td>{{ sum }}</td>
+      </tr>
+      <tr>
+        <td><strong>Mean</strong></td>
+        <td>{{ mean }}</td>
+      </tr>
+      <tr>
+        <td><strong>Median</strong></td>
+        <td>{{ median }}</td>
+      </tr>
+      <tr>
+        <td><strong>Mode</strong></td>
+        <td>{{ mode }}</td>
+      </tr>
+      <tr>
+        <td><strong>Range</strong></td>
+        <td>{{ range }}</td>
+      </tr>
+      <tr>
+        <td><strong>Prime Numbers</strong></td>
+        <td>
+          {% if primes%} {{ primes|join:", " }} {% else %}
+          <span class="text-danger">
+            There is not prime number in giving data or file.</span
+          >
+          {%endif%}
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Armstrong Numbers</strong></td>
+        <td>
+          {% if armstrongs%} {{ armstrongs|join:", " }} {% else %}
+          <span class="text-danger">
+            There is not Armstrong numbers in giving data or file.</span
+          >
+          {%endif%}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <a href="{% url 'home' %}" class="btn btn-info">Home</a>
+</div>
+
+{% endblock %}
